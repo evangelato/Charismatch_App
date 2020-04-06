@@ -1,6 +1,5 @@
 import React from "react";
 import { Layout, Text, Button } from "@ui-kitten/components";
-import PropTypes from "prop-types";
 
 interface Props {
   navigation: any;
@@ -13,12 +12,6 @@ const Login: React.FC<Props> = ({ navigation }) => {
       <Button onPress={() => navigation.navigate("Home")}>Login</Button>
     </Layout>
   );
-};
-
-Login.propTypes = {
-  navigation: PropTypes.shape({
-    navigate: PropTypes.func.isRequired
-  }).isRequired
 };
 
 export default Login;
