@@ -6,19 +6,19 @@ interface Props {
   navigation: any;
 }
 
-const Login: React.FC<Props> = ({ navigation }) => {
+const Home: React.FC<Props> = ({ navigation }) => {
   return (
     <Layout style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
-      <Text category="h1">LOGIN</Text>
-      <Button onPress={() => navigation.navigate("Home")}>Login</Button>
+      <Text category="h1">HOME</Text>
+      <Button onPress={() => navigation.navigate("Login")}>Go Back</Button>
     </Layout>
   );
 };
 
-Login.propTypes = {
+Home.propTypes = {
   navigation: PropTypes.shape({
     navigate: PropTypes.func.isRequired
   }).isRequired
 };
 
-export default Login;
+export default Home;
