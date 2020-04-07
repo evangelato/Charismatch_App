@@ -7,6 +7,10 @@ import {
   Layout
 } from "@ui-kitten/components";
 
+interface Props {
+  navigation: any;
+}
+
 const styles = StyleSheet.create({
   bottomNavigation: {
     marginVertical: 8
@@ -29,19 +33,24 @@ const SettingIcon = (style: any): ReactElement => (
   <Icon {...style} name="settings-outline" />
 );
 
-const Navigation: React.FC = () => {
-  const [topSelectedIndex, setTopSelectedIndex] = React.useState(0);
-  // const [bottomSelectedIndex, setBottomSelectedIndex] = React.useState(0);
+const Navigation: React.FC<Props> = ({ navigation }) => {
+  const [bottomSelectedIndex, setBottomSelectedIndex] = React.useState(0);
 
   return (
     <Layout>
       <BottomNavigation
         style={styles.bottomNavigation}
-        selectedIndex={topSelectedIndex}
-        onSelect={setTopSelectedIndex}
+        selectedIndex={bottomSelectedIndex}
+        onSelect={setBottomSelectedIndex}
       >
-        <BottomNavigationTab icon={PersonIcon} />
-        <BottomNavigationTab icon={ActivityIcon} />
+        <BottomNavigationTab
+          icon={PersonIcon}
+          onPress={() => navigation.navigate("Profile")}
+        />
+        <BottomNavigationTab
+          icon={ActivityIcon}
+          onPress={() => navigation.navigate("Activity")}
+        />
         <BottomNavigationTab icon={MessageIcon} />
         <BottomNavigationTab icon={SettingIcon} />
       </BottomNavigation>
