@@ -6,7 +6,7 @@ import {
   light as lightTheme,
   dark as darkTheme
 } from "@eva-design/eva";
-import AppNavigator from "./components/AppNavigator";
+import AppNavigator from "./navigation/AppNavigator";
 
 const App: React.FC = () => {
   useEffect(() => {

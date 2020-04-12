@@ -36,6 +36,10 @@ const SettingIcon = (style: any): ReactElement => (
 const Navigation: React.FC<Props> = ({ navigation }) => {
   const [bottomSelectedIndex, setBottomSelectedIndex] = React.useState(0);
 
+  const navigateToProfile = (): void => {
+    console.log("test");
+    navigation.navigate("Profile");
+  };
   return (
     <Layout>
       <BottomNavigation
@@ -43,10 +47,7 @@ const Navigation: React.FC<Props> = ({ navigation }) => {
         selectedIndex={bottomSelectedIndex}
         onSelect={setBottomSelectedIndex}
       >
-        <BottomNavigationTab
-          icon={PersonIcon}
-          onPress={() => navigation.navigate("Profile")}
-        />
+        <BottomNavigationTab icon={PersonIcon} onPress={navigateToProfile} />
         <BottomNavigationTab
           icon={ActivityIcon}
           onPress={() => navigation.navigate("Activity")}
