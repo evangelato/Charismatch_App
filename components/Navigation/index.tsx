@@ -33,13 +33,9 @@ const SettingIcon = (style: any): ReactElement => (
   <Icon {...style} name="settings-outline" />
 );
 
-const Navigation: React.FC<Props> = ({ navigation }) => {
+const Navigation: React.FC = () => {
   const [bottomSelectedIndex, setBottomSelectedIndex] = React.useState(0);
 
-  const navigateToProfile = (): void => {
-    console.log("test");
-    navigation.navigate("Profile");
-  };
   return (
     <Layout>
       <BottomNavigation
@@ -47,11 +43,8 @@ const Navigation: React.FC<Props> = ({ navigation }) => {
         selectedIndex={bottomSelectedIndex}
         onSelect={setBottomSelectedIndex}
       >
-        <BottomNavigationTab icon={PersonIcon} onPress={navigateToProfile} />
-        <BottomNavigationTab
-          icon={ActivityIcon}
-          onPress={() => navigation.navigate("Activity")}
-        />
+        <BottomNavigationTab icon={PersonIcon} />
+        <BottomNavigationTab icon={ActivityIcon} />
         <BottomNavigationTab icon={MessageIcon} />
         <BottomNavigationTab icon={SettingIcon} />
       </BottomNavigation>

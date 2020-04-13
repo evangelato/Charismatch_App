@@ -6,10 +6,13 @@ interface Props {
 }
 
 const Login: React.FC<Props> = ({ navigation }) => {
+  const handleLogIn = (): void => {
+    navigation.navigate("Main");
+  };
   return (
     <Layout style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
       <Text category="h1">LOGIN</Text>
-      <Button onPress={() => navigation.navigate("Profile")}>Login</Button>
+      <Button onPress={handleLogIn}>Login</Button>
     </Layout>
   );
 };
