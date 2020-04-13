@@ -21,6 +21,7 @@
         }
       ],
       "@typescript-eslint/no-explicit-any": "off",
+      "@typescript-eslint/ban-ts-ignore": "off",
       "react/prop-types": 0
     },
     "settings":  {
