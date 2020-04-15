@@ -1,11 +1,11 @@
-import React from "react";
-import { StyleProp, ViewStyle } from "react-native";
-import { EdgeInsets, useSafeArea } from "react-native-safe-area-context";
-import { Layout, LayoutElement, LayoutProps } from "@ui-kitten/components";
+import React from 'react';
+import { StyleProp, ViewStyle } from 'react-native';
+import { EdgeInsets, useSafeArea } from 'react-native-safe-area-context';
+import { Layout, LayoutElement, LayoutProps } from '@ui-kitten/components';
 
 export enum SaveAreaInset {
-  TOP = "top",
-  BOTTOM = "bottom"
+  TOP = 'top',
+  BOTTOM = 'bottom',
 }
 
 type InsetsProp = SaveAreaInset | SaveAreaInset[];
@@ -27,6 +27,8 @@ export const SafeAreaLayout = (props: SafeAreaLayoutProps): LayoutElement => {
         return { paddingBottom: safeAreaInsets.bottom };
       case SaveAreaInset.TOP:
         return { paddingTop: safeAreaInsets.top };
+      default:
+        return {};
     }
   };
 
@@ -35,5 +37,6 @@ export const SafeAreaLayout = (props: SafeAreaLayoutProps): LayoutElement => {
     return React.Children.map(insets, toStyleProp);
   };
 
+  // eslint-disable-next-line react/jsx-props-no-spreading
   return <Layout {...layoutProps} style={[style, createInsets()]} />;
 };

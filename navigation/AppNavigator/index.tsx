@@ -1,9 +1,9 @@
-import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
-import { NavigationContainer } from "@react-navigation/native";
-import { Routes } from "../routes";
-import AuthNavigator from "../AuthNavigator";
-import BottomTabNavigator from "../BottomTabNavigator";
+import React from 'react';
+import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import Routes from '../routes';
+import AuthNavigator from '../AuthNavigator';
+import BottomTabNavigator from '../BottomTabNavigator';
 
 const Stack = createStackNavigator();
 

@@ -1,5 +1,5 @@
-import React from "react";
-import { Layout, Text, Button } from "@ui-kitten/components";
+import React from 'react';
+import { Layout, Text, Button } from '@ui-kitten/components';
 
 interface Props {
   navigation: any;
@@ -7,10 +7,10 @@ interface Props {
 
 const Login: React.FC<Props> = ({ navigation }) => {
   const handleLogIn = (): void => {
-    navigation.navigate("Main");
+    navigation.navigate('Main');
   };
   return (
-    <Layout style={{ flex: 1, justifyContent: "center", alignItems: "center" }}>
+    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
       <Text category="h1">LOGIN</Text>
       <Button onPress={handleLogIn}>Login</Button>
     </Layout>
