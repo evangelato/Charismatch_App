@@ -16,7 +16,7 @@ const HomeTabBar = ({ descriptors, state, navigation }: any): SafeAreaLayoutElem
   return (
     <SafeAreaLayout insets={SaveAreaInset.BOTTOM}>
       <Divider />
-      <BottomNavigation appearance="noIndicator" selectedIndex={state.index} onSelect={onSelect}>
+      <BottomNavigation selectedIndex={state.index} onSelect={onSelect}>
         {state.routes.map(createNavigationTabForRoute)}
       </BottomNavigation>
     </SafeAreaLayout>
