@@ -1,6 +1,7 @@
 /* eslint-disable global-require */
 import React from 'react';
 import { Text, Button, Input } from '@ui-kitten/components';
+import Constants from 'expo-constants';
 import { StyleSheet, View } from 'react-native';
 import ImageOverlay from '../ImageOverlay';
 import KeyboardAvoidingView from '../KeyboardAvoidingView';
@@ -14,6 +15,7 @@ interface Props {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    paddingTop: Constants.statusBarHeight,
   },
   headerContainer: {
     minHeight: 216,
