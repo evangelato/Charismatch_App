@@ -37,6 +37,9 @@ const Settings: React.FC<Props> = ({ navigation }) => {
       <Setting style={[styles.setting, styles.section]} hint="Sound Enabled" onPress={toggleSound}>
         <Toggle checked={soundEnabled} onChange={toggleSound} />
       </Setting>
+      <Setting style={[styles.setting, styles.section]} hint="Dark Mode" onPress={toggleSound}>
+        <Toggle checked={soundEnabled} onChange={toggleSound} />
+      </Setting>
     </Layout>
   );
 };

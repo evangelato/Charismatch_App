@@ -95,7 +95,7 @@ const Login: React.FC<Props> = ({ navigation }) => {
 
   return (
     <KeyboardAvoidingView>
-      <ImageOverlay style={styles.container} source={require('../../assets/auth_background.jpg')}>
+      <ImageOverlay style={styles.container} source={require('../../../assets/auth_background.jpg')}>
         <View style={styles.headerContainer}>
           <Text category="h1" status="control">
             Hello
