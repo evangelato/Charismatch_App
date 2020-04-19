@@ -5,7 +5,7 @@ import Explore from '../../components/Explore';
 import Messages from '../../components/Messages';
 import Settings from '../../components/Settings';
 import HomeTabBar from '../../components/HomeTabBar';
-import { ProfileIcon, ExploreIcon, MessageIcon, SettingsIcon } from '../../assets/icons';
+import { ProfileIcon, ExploreIcon, MessageIcon, SettingsIcon } from '../../../assets/icons';
 import Routes from '../routes';
 
 const BottomTab = createBottomTabNavigator();

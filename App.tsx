@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { ApplicationProvider, IconRegistry } from '@ui-kitten/components';
 import { EvaIconsPack } from '@ui-kitten/eva-icons';
 import { mapping, light as lightTheme, dark as darkTheme } from '@eva-design/eva';
-import AppNavigator from './navigation/AppNavigator';
+import AppNavigator from './src/navigation/AppNavigator';
 
 const App: React.FC = () => {
   // useEffect(() => {}, []);

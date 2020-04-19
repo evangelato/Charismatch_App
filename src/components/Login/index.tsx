@@ -5,7 +5,7 @@ import Constants from 'expo-constants';
 import { StyleSheet, View } from 'react-native';
 import ImageOverlay from '../ImageOverlay';
 import KeyboardAvoidingView from '../KeyboardAvoidingView';
-import { EyeIcon, EyeOffIcon, FacebookIcon, GoogleIcon, PersonIcon, TwitterIcon } from '../../assets/icons';
+import { EyeIcon, EyeOffIcon, FacebookIcon, GoogleIcon, PersonIcon, TwitterIcon } from '../../../assets/icons';
 // import BackgroundImage from '../../assets/auth_background.jpg';
 
 interface Props {
