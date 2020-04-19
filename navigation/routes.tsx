@@ -3,7 +3,7 @@ enum Routes {
   MAIN = 'Main',
   LOGIN = 'Login',
   PROFILE = 'Profile',
-  ACTIVITY = 'Activity',
+  EXPLORE = 'Explore',
   MESSAGES = 'Messages',
   SETTINGS = 'Settings',
 }

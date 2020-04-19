@@ -13,6 +13,8 @@ export const ProfileIcon = (style: Style): IconElement => <Icon {...style} name=
 
 export const ActivityIcon = (style: Style): IconElement => <Icon {...style} name="activity-outline" />;
 
+export const ExploreIcon = (style: Style): IconElement => <Icon {...style} name="compass-outline" />;
+
 export const MessageIcon = (style: Style): IconElement => <Icon {...style} name="message-circle-outline" />;
 
 export const SettingsIcon = (style: Style): IconElement => <Icon {...style} name="settings-outline" />;

@@ -75,7 +75,8 @@ const Login: React.FC<Props> = ({ navigation }) => {
   const [passwordVisible, setPasswordVisible] = React.useState<boolean>(false);
 
   const onSignInButtonPress = (): void => {
-    navigation.goBack();
+    // navigation.goBack();
+    navigation.navigate('Main');
   };
 
   const onSignUpButtonPress = (): void => {

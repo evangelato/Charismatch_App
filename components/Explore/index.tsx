@@ -5,13 +5,13 @@ interface Props {
   navigation: any;
 }
 
-const Activity: React.FC<Props> = ({ navigation }) => {
+const Explore: React.FC<Props> = ({ navigation }) => {
   return (
     <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text category="h1">ACTIVITY</Text>
+      <Text category="h1">EXPLORE</Text>
       <Button onPress={() => navigation.navigate('Login')}>Go Back</Button>
     </Layout>
   );
 };
 
-export default Activity;
+export default Explore;
