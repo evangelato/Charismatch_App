@@ -1,7 +1,7 @@
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { ImageStyle } from 'react-native';
-import { Icon, IconElement } from '@ui-kitten/components';
+import { Icon, IconElement, useTheme } from '@ui-kitten/components';
 
 interface Style extends ImageStyle {
   focused: boolean;
@@ -30,3 +30,10 @@ export const GoogleIcon = (style: ImageStyle): IconElement => <Icon {...style} n
 export const PersonIcon = (style: ImageStyle): IconElement => <Icon {...style} name="person" />;
 
 export const TwitterIcon = (style: ImageStyle): IconElement => <Icon {...style} name="twitter" />;
+
+export const DoneAllIcon = (style: ImageStyle): IconElement => {
+  const theme = useTheme();
+  return <Icon {...style} width={16} height={16} fill={theme['color-primary-default']} name="done-all" />;
+};
+
+export const SearchIcon = (style: ImageStyle): IconElement => <Icon {...style} name="search" />;
