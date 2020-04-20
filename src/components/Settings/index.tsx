@@ -1,8 +1,10 @@
 import React from 'react';
 import { StyleSheet } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 import Constants from 'expo-constants';
 import { Layout, Toggle } from '@ui-kitten/components';
 import Setting from './settingButton';
+import { darkModeOn, darkModeOff } from '../../actions/settingsActions';
 
 interface Props {
   navigation: any;
@@ -22,10 +24,22 @@ const styles = StyleSheet.create({
 });
 
 const Settings: React.FC<Props> = ({ navigation }) => {
+  const dispatch = useDispatch();
+
+  const isDarkMode = useSelector((state: any) => state.Settings.isDarkMode);
+
   const [soundEnabled, setSoundEnabled] = React.useState<boolean>(false);
 
   const toggleSound = (): void => {
     setSoundEnabled(!soundEnabled);
+  };
+
+  const toggleDarkMode = (): void => {
+    if (isDarkMode) {
+      dispatch(darkModeOff());
+    } else {
+      dispatch(darkModeOn());
+    }
   };
 
   return (
@@ -37,8 +51,8 @@ const Settings: React.FC<Props> = ({ navigation }) => {
       <Setting style={[styles.setting, styles.section]} hint="Sound Enabled" onPress={toggleSound}>
         <Toggle checked={soundEnabled} onChange={toggleSound} />
       </Setting>
-      <Setting style={[styles.setting, styles.section]} hint="Dark Mode" onPress={toggleSound}>
-        <Toggle checked={soundEnabled} onChange={toggleSound} />
+      <Setting style={[styles.setting, styles.section]} hint="Dark Mode" onPress={toggleDarkMode}>
+        <Toggle checked={isDarkMode} onChange={toggleDarkMode} />
       </Setting>
     </Layout>
   );
