@@ -42,6 +42,10 @@ const Settings: React.FC<Props> = ({ navigation }) => {
     }
   };
 
+  const logOut = (): void => {
+    navigation.navigate('Login');
+  };
+
   return (
     <Layout style={styles.container}>
       <Setting style={styles.setting} hint="Edit Profile" />
@@ -54,6 +58,7 @@ const Settings: React.FC<Props> = ({ navigation }) => {
       <Setting style={[styles.setting, styles.section]} hint="Dark Mode" onPress={toggleDarkMode}>
         <Toggle checked={isDarkMode} onChange={toggleDarkMode} />
       </Setting>
+      <Setting style={styles.setting} hint="Log Out" onPress={logOut} />
     </Layout>
   );
 };
