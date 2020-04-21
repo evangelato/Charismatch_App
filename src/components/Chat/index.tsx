@@ -1,7 +1,8 @@
 /* eslint-disable global-require */
 import React from 'react';
 import { ImageSourcePropType, Keyboard, Platform } from 'react-native';
-import { Button, Input, StyleService, useStyleSheet } from '@ui-kitten/components';
+import { Button, Input, StyleService, useStyleSheet, Layout } from '@ui-kitten/components';
+import Constants from 'expo-constants';
 import { KeyboardAvoidingView } from './keyboardAvoidingView';
 import { Chat } from './chat';
 import { AttachmentsMenu } from './attachmentsMenu';
@@ -25,6 +26,7 @@ const initialMessages: Message[] = [
 const themedStyles = StyleService.create({
   container: {
     flex: 1,
+    paddingTop: Constants.statusBarHeight,
   },
   list: {
     flex: 1,
@@ -110,7 +112,7 @@ const MessageLayout: React.FC<Props> = ({ navigation }) => {
   );
 
   return (
-    <>
+    <Layout style={styles.container}>
       <Chat style={styles.list} contentContainerStyle={styles.listContent} followEnd data={messages} />
       <KeyboardAvoidingView style={styles.messageInputContainer} offset={keyboardOffset}>
         <Button style={[styles.iconButton, styles.attachButton]} icon={PlusIcon} onPress={toggleAttachmentsMenu} />
@@ -130,7 +132,7 @@ const MessageLayout: React.FC<Props> = ({ navigation }) => {
         />
       </KeyboardAvoidingView>
       {attachmentsMenuVisible && renderAttachmentsMenu()}
-    </>
+    </Layout>
   );
 };
 

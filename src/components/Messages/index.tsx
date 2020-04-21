@@ -36,7 +36,7 @@ const Messaging: React.FC<Props> = ({ navigation }) => {
   const [searchQuery, setSearchQuery] = React.useState<string>();
 
   const onItemPress = (index: number): void => {
-    navigation.navigate('Chat1');
+    navigation.navigate('Chat');
   };
 
   const renderItem = (info: ListRenderItemInfo<Message>): React.ReactElement => (

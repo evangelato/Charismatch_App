@@ -5,6 +5,8 @@ enum Routes {
   PROFILE = 'Profile',
   EXPLORE = 'Explore',
   MESSAGES = 'Messages',
+  MESSAGE_LIST = 'MessageList',
+  CHAT = 'Chat',
   SETTINGS = 'Settings',
 }
 
