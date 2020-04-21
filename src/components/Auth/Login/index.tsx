@@ -3,9 +3,9 @@ import React from 'react';
 import { Text, Button, Input } from '@ui-kitten/components';
 import Constants from 'expo-constants';
 import { StyleSheet, View } from 'react-native';
-import ImageOverlay from '../ImageOverlay';
-import KeyboardAvoidingView from '../KeyboardAvoidingView';
-import { EyeIcon, EyeOffIcon, FacebookIcon, GoogleIcon, PersonIcon, TwitterIcon } from '../../../assets/icons';
+import ImageOverlay from './imageOverlay';
+import KeyboardAvoidingView from './keyboardAvoidingView';
+import { EyeIcon, EyeOffIcon, FacebookIcon, GoogleIcon, PersonIcon, TwitterIcon } from '../../../../assets/icons';
 // import BackgroundImage from '../../assets/auth_background.jpg';
 
 interface Props {
@@ -95,7 +95,7 @@ const Login: React.FC<Props> = ({ navigation }) => {
 
   return (
     <KeyboardAvoidingView>
-      <ImageOverlay style={styles.container} source={require('../../../assets/auth_background.jpg')}>
+      <ImageOverlay style={styles.container} source={require('./assets/auth_background.jpg')}>
         <View style={styles.headerContainer}>
           <Text category="h1" status="control">
             Hello

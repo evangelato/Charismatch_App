@@ -2,7 +2,7 @@ import React from 'react';
 import { Layout, Input, List } from '@ui-kitten/components';
 import { StyleSheet, ListRenderItemInfo } from 'react-native';
 import Constants from 'expo-constants';
-import { SearchIcon } from '../../../assets/icons';
+import { SearchIcon } from '../../../../assets/icons';
 import { Message } from './data';
 import { MessageItem } from './MessageItem';
 

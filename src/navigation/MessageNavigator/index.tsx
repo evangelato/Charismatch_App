@@ -1,8 +1,8 @@
 import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import Routes from '../routes';
-import MessageList from '../../components/Messages';
-import Chat from '../../components/Chat';
+import MessageList from '../../components/Messages/MessageList';
+import Chat from '../../components/Messages/Chat';
 
 const Stack = createStackNavigator();
 

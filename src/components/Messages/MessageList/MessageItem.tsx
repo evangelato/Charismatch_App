@@ -2,7 +2,7 @@
 import React from 'react';
 import { StyleSheet, View, ViewStyle } from 'react-native';
 import { Avatar, ListItem, ListItemProps, Text } from '@ui-kitten/components';
-import { DoneAllIcon } from '../../../assets/icons';
+import { DoneAllIcon } from '../../../../assets/icons';
 import { Message } from './data';
 
 export type MessageItemProps = ListItemProps & {

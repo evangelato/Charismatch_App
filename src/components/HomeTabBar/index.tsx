@@ -1,6 +1,6 @@
 import React from 'react';
 import { BottomNavigation, BottomNavigationTab, Divider, BottomNavigationTabElement } from '@ui-kitten/components';
-import { SafeAreaLayout, SafeAreaLayoutElement, SaveAreaInset } from '../SafeArea';
+import { SafeAreaLayout, SafeAreaLayoutElement, SaveAreaInset } from './safeArea';
 
 const HomeTabBar = ({ descriptors, state, navigation }: any): SafeAreaLayoutElement => {
   const onSelect = (index: number): void => {
