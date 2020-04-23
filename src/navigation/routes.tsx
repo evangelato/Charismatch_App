@@ -1,5 +1,6 @@
 enum Routes {
   AUTH = 'Auth',
+  SIGN_UP = 'SignUp',
   MAIN = 'Main',
   LOGIN = 'Login',
   PROFILE = 'Profile',
