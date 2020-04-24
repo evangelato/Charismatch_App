@@ -19,6 +19,7 @@ const themedStyles = StyleService.create({
   contentContainer: {
     paddingVertical: 24,
     backgroundColor: 'background-basic-color-2',
+    paddingBottom: 49,
   },
   photo: {
     alignSelf: 'center',
