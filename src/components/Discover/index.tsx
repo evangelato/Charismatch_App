@@ -16,13 +16,13 @@ const styles = StyleSheet.create({
   },
 });
 
-const Explore: React.FC<Props> = ({ navigation }) => {
+const Discover: React.FC<Props> = ({ navigation }) => {
   return (
     <Layout style={styles.container}>
-      <Text category="h1">EXPLORE</Text>
+      <Text category="h1">DISCOVER</Text>
       <Button onPress={() => navigation.navigate('Login')}>Go Back</Button>
     </Layout>
   );
 };
 
-export default Explore;
+export default Discover;

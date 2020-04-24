@@ -4,7 +4,7 @@ enum Routes {
   MAIN = 'Main',
   LOGIN = 'Login',
   PROFILE = 'Profile',
-  EXPLORE = 'Explore',
+  DISCOVER = 'Discover',
   MESSAGES = 'Messages',
   MESSAGE_LIST = 'MessageList',
   CHAT = 'Chat',
