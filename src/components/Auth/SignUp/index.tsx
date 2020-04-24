@@ -83,7 +83,7 @@ const SignUp: React.FC<Props> = ({ navigation }) => {
   };
 
   const onSignInButtonPress = (): void => {
-    navigation.navigate('SignIn4');
+    navigation.navigate('Login');
   };
 
   const onPasswordIconPress = (): void => {
