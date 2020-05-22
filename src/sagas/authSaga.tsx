@@ -1,4 +1,4 @@
-import { put, takeLatest, all, fork } from 'redux-saga/effects';
+import { put, takeLatest, all } from 'redux-saga/effects';
 import { login, logout } from '../apis/authApi';
 import {
   LOGIN_REQUEST,
@@ -36,6 +36,5 @@ function* requestLogoutWatcher(): any {
 }
 
 export default function* authSaga(): any {
-  yield all([fork(requestLoginWatcher())]);
-  yield all([fork(requestLogoutWatcher())]);
+  yield all([requestLoginWatcher(), requestLogoutWatcher()]);
 }

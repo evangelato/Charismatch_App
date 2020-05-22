@@ -8,19 +8,49 @@ export const LOGOUT_REQUEST = 'LOGOUT_REQUEST';
 export const LOGOUT_SUCCESS = 'LOGOUT_SUCCESS';
 export const LOGOUT_FAILURE = 'LOGOUT_FAILURE';
 
-interface LoginAction {
+interface LoginRequestAction {
   type: typeof LOGIN_REQUEST;
   isLoggedIn: boolean;
   authToken: string;
 }
 
-interface LogoutAction {
+interface LoginSuccessAction {
+  type: typeof LOGIN_SUCCESS;
+  isLoggedIn: boolean;
+  authToken: string;
+}
+
+interface LoginFailureAction {
+  type: typeof LOGIN_FAILURE;
+  isLoggedIn: boolean;
+  authToken: string;
+}
+
+interface LogoutRequestAction {
   type: typeof LOGOUT_REQUEST;
   isLoggedIn: boolean;
   autToken: string;
 }
 
-export type AuthActionTypes = LoginAction | LogoutAction;
+interface LogoutSuccessAction {
+  type: typeof LOGOUT_SUCCESS;
+  isLoggedIn: boolean;
+  autToken: string;
+}
+
+interface LogoutFailureAction {
+  type: typeof LOGOUT_FAILURE;
+  isLoggedIn: boolean;
+  autToken: string;
+}
+
+export type AuthActionTypes =
+  | LoginRequestAction
+  | LoginSuccessAction
+  | LoginFailureAction
+  | LogoutRequestAction
+  | LogoutSuccessAction
+  | LogoutFailureAction;
 
 /*
  * Auth Action Creators

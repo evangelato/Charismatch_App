@@ -1,3 +1,13 @@
-export const baseUrl = process.env.NODE_ENV === 'production' ? '' : 'http://localhost:4000/api';
+import Constants from 'expo-constants';
 
-export const temp = '';
+const { manifest } = Constants;
+
+export const api =
+  typeof manifest.packagerOpts === `object` && manifest.packagerOpts.dev
+    ? manifest
+        .debuggerHost!.split(`:`)!
+        .shift()!
+        .concat(`:4000/api`)
+    : `api.example.com`;
+
+export const baseUrl = process.env.NODE_ENV === 'production' ? '' : api;

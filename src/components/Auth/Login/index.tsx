@@ -1,8 +1,10 @@
 /* eslint-disable global-require */
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Text, Button, Input } from '@ui-kitten/components';
+import { useDispatch, useSelector } from 'react-redux';
 import Constants from 'expo-constants';
 import { StyleSheet, View } from 'react-native';
+import { login } from '../../../actions/authActions';
 import ImageOverlay from './imageOverlay';
 import KeyboardAvoidingView from './keyboardAvoidingView';
 import { EyeIcon, EyeOffIcon, FacebookIcon, GoogleIcon, PersonIcon, TwitterIcon } from '../../../../assets/icons';
@@ -59,26 +61,16 @@ const styles = StyleSheet.create({
 });
 
 const Login: React.FC<Props> = ({ navigation }) => {
-  /*
-  const handleLogIn = (): void => {
-    navigation.navigate('Main');
-  };
-  return (
-    <Layout style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-      <Text category="h1">LOGIN</Text>
-      <Input placeholder="username" />
-      <Input placeholder="password" />
-      <Button onPress={handleLogIn}>Login</Button>
-    </Layout>
-  );
-  */
+  const dispatch = useDispatch();
+  const token = useSelector((state: any) => state.Auth.token);
   const [email, setEmail] = React.useState<string>();
   const [password, setPassword] = React.useState<string>();
   const [passwordVisible, setPasswordVisible] = React.useState<boolean>(false);
 
   const onSignInButtonPress = (): void => {
     // navigation.goBack();
-    navigation.navigate('Main');
+    dispatch(login());
+    // navigation.navigate('Main');
   };
 
   const onSignUpButtonPress = (): void => {
