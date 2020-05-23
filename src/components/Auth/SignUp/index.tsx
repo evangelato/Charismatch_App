@@ -79,7 +79,7 @@ const SignUp: React.FC<Props> = ({ navigation }) => {
   const styles = useStyleSheet(themedStyles);
 
   const onSignUpButtonPress = (): void => {
-    navigation.goBack();
+    // navigation.goBack();
   };
 
   const onSignInButtonPress = (): void => {

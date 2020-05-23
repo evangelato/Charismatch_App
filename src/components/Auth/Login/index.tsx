@@ -69,8 +69,8 @@ const Login: React.FC<Props> = ({ navigation }) => {
 
   const onSignInButtonPress = (): void => {
     // navigation.goBack();
-    dispatch(login());
-    // navigation.navigate('Main');
+    // dispatch(login());
+    navigation.navigate('Main');
   };
 
   const onSignUpButtonPress = (): void => {
