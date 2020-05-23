@@ -9,6 +9,8 @@ export const EyeIcon = (style: ImageStyle): IconElement => <Icon {...style} name
 
 export const EyeOffIcon = (style: ImageStyle): IconElement => <Icon {...style} name="eye-off" />;
 
+export const PencilIcon = (style: ImageStyle): IconElement => <Icon {...style} name="edit-outline" />;
+
 export const FacebookIcon = (style: ImageStyle): IconElement => <Icon {...style} name="facebook" />;
 
 export const GoogleIcon = (style: ImageStyle): IconElement => <Icon {...style} name="google" />;

@@ -1,12 +1,24 @@
 /* eslint-disable global-require */
-import React from 'react';
+import React, { useState } from 'react';
 import { View, ImageStyle } from 'react-native';
+import { useDispatch, useSelector } from 'react-redux';
 import Constants from 'expo-constants';
 import { Button, CheckBox, Input, StyleService, Text, useStyleSheet } from '@ui-kitten/components';
 import { ImageOverlay } from './imageOverlay';
 import { ProfileAvatar } from './profileAvatar';
-import { EmailIcon, EyeIcon, EyeOffIcon, FacebookIcon, GoogleIcon, PersonIcon, PlusIcon, TwitterIcon } from './icons';
+import {
+  EmailIcon,
+  EyeIcon,
+  EyeOffIcon,
+  PencilIcon,
+  FacebookIcon,
+  GoogleIcon,
+  PersonIcon,
+  PlusIcon,
+  TwitterIcon,
+} from './icons';
 import KeyboardAvoidingView from './keyboardAvoidingView';
+import { signUp } from '../../../actions/userActions';
 
 interface Props {
   navigation: any;
@@ -67,19 +79,47 @@ const themedStyles = StyleService.create({
     alignSelf: 'center',
     marginBottom: 16,
   },
+  content: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    paddingHorizontal: 4,
+    paddingVertical: 8,
+  },
+  avatar: {
+    marginHorizontal: 4,
+  },
+  backdrop: {
+    backgroundColor: 'rgba(0, 0, 0, 0.5)',
+  },
 });
 
 const SignUp: React.FC<Props> = ({ navigation }) => {
-  const [userName, setUserName] = React.useState<string>();
-  const [email, setEmail] = React.useState<string>();
-  const [password, setPassword] = React.useState<string>();
-  const [termsAccepted, setTermsAccepted] = React.useState<boolean>(false);
-  const [passwordVisible, setPasswordVisible] = React.useState<boolean>(false);
+  const dispatch = useDispatch();
+  const response = useSelector((state: any) => state.Users.response);
+
+  const [username, setUsername] = useState<string>('');
+  const [email, setEmail] = useState<string>('');
+  const [name, setName] = useState<string>('');
+  const [password, setPassword] = useState<string>('');
+  const [termsAccepted, setTermsAccepted] = useState<boolean>(false);
+  const [passwordVisible, setPasswordVisible] = useState<boolean>(false);
+  const [warningText, setWarningText] = useState<string>('');
 
   const styles = useStyleSheet(themedStyles);
 
   const onSignUpButtonPress = (): void => {
     // navigation.goBack();
+    if (username === '') {
+      setWarningText('Fill in the User Name');
+    } else if (email === '') {
+      setWarningText('Enter your email.');
+    } else if (password === '') {
+      setWarningText('Enter your password');
+    } else if (!termsAccepted) {
+      setWarningText('Agree to the Terms & Conditions');
+    } else {
+      dispatch(signUp(username, name, email, password));
+    }
   };
 
   const onSignInButtonPress = (): void => {
@@ -111,8 +151,17 @@ const SignUp: React.FC<Props> = ({ navigation }) => {
             autoCapitalize="none"
             placeholder="User Name"
             icon={PersonIcon}
-            value={userName}
-            onChangeText={setUserName}
+            value={username}
+            onChangeText={setUsername}
+          />
+          <Input
+            style={styles.formInput}
+            status="control"
+            autoCapitalize="none"
+            placeholder="Name"
+            icon={PencilIcon}
+            value={name}
+            onChangeText={setName}
           />
           <Input
             style={styles.formInput}
@@ -141,6 +190,7 @@ const SignUp: React.FC<Props> = ({ navigation }) => {
             checked={termsAccepted}
             onChange={(checked: boolean) => setTermsAccepted(checked)}
           />
+          <Text status="danger">{warningText}</Text>
         </View>
         <Button style={styles.signUpButton} size="giant" onPress={onSignUpButtonPress}>
           SIGN UP

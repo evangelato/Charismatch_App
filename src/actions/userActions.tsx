@@ -22,6 +22,6 @@ export type UserActionTypes = SignUpRequestAction | SignUpSuccessAction | SignUp
 /*
  * User Action Creators
  */
-export function signUp(): any {
-  return { type: SIGN_UP_REQUEST };
+export function signUp(username: string, name: string, email: string, password: string): any {
+  return { type: SIGN_UP_REQUEST, username, name, email, password };
 }

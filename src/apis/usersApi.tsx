@@ -1,12 +1,13 @@
 /* eslint-disable import/prefer-default-export */
 import axios from './axiosConfig';
 
-export const signUp = (): any => {
+export const signUp = (username: string, name: string, email: string, password: string): any => {
   return axios
     .post('/users', {
-      name: 'test',
-      username: 'test',
-      password: 'test',
+      username,
+      name,
+      email,
+      password,
     })
     .then(response => response.data);
 };
